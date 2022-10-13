@@ -18,7 +18,7 @@ app.get('/', (req, res) =>
 
 app.post('/post', (req, res) =>
 {
-    response.send(request.body);
+    response.send(req.body);
 
 }
 );
