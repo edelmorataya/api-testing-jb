@@ -1,5 +1,5 @@
 module.exports = [
     {
-      "test" : "test2"
+      "test" : "test3"
     }
   ]

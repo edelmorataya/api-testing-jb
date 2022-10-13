@@ -18,8 +18,8 @@ app.get('/', (req, res) =>
 
 app.post('/post', (req, res) =>
 {
-    res.send(req.body);
-
+    res.json(req.body);
+    
 }
 );
 
