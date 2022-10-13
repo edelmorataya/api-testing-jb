@@ -18,7 +18,13 @@ app.get('/', (req, res) =>
 
 app.post('/post', (req, res) =>
 {
-    res.send(req)
+    res.json(
+{
+    "data": rec
+}
+
+
+    )
 });
 
 app.listen(process.env.PORT || 3000, 
