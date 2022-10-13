@@ -8,6 +8,7 @@ const posts = require('./posts')
 app.get('/posts', (req, res) =>
 {
     res.json(posts)
+    
 });
 
 app.get('/', (req, res) =>
