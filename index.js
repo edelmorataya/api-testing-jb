@@ -18,14 +18,12 @@ app.get('/', (req, res) =>
 
 app.post('/post', (req, res) =>
 {
-    res.json(
-{
-    "data": rec
+    response.send(request.body);
+
 }
+);
 
 
-    )
-});
 
 app.listen(process.env.PORT || 3000, 
    () => console.log("Server is login")
