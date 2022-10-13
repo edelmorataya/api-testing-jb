@@ -15,6 +15,11 @@ app.get('/', (req, res) =>
     res.send("api running")
 });
 
+app.post('/post', (req, res) =>
+{
+    res.json(req)
+});
+
 app.listen(process.env.PORT || 3000, 
    () => console.log("Server is login")
 
