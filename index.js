@@ -8,7 +8,7 @@ const posts = require('./posts')
 app.get('/posts', (req, res) =>
 {
     res.json(posts)
-    
+
 });
 
 app.get('/', (req, res) =>
@@ -18,7 +18,7 @@ app.get('/', (req, res) =>
 
 app.post('/post', (req, res) =>
 {
-    res.json(req)
+    res.send(req)
 });
 
 app.listen(process.env.PORT || 3000, 
