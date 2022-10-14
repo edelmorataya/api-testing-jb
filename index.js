@@ -16,13 +16,27 @@ app.get('/', (req, res) =>
     res.send("api running")
 });
 
+
+
+
+
 app.post('/post', (req, res) =>
 {
-    res.json(req.body);
+    //console.log(req.body);
+    //res.json(req.body);
+    //res.append(req.body.post)
+
+    const info = {
+
+        id: infos.lenth +1,
+        name : req.body.post
+    };
+
+    infos.push(info);
+    res.send(info);
     
 }
 );
-
 
 
 app.listen(process.env.PORT || 3000, 
