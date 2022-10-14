@@ -5,6 +5,12 @@ const  app = express ();
 
 app.use(express.json());
 
+const infos = [
+    {id:1, name: 'Info1'},
+    {id:2, name: 'Info2'},
+    {id:3, name: 'Info3'}
+];
+
 const posts = require('./posts')
 
 app.get('/posts', (req, res) =>
@@ -19,10 +25,13 @@ app.get('/', (req, res) =>
 });
 
 
+app.get('/api/infos', (req, res) =>
+{
+    res.send(infos)
+});
 
 
-
-app.post('/post', (req, res) =>
+app.post('/api/infos', (req, res) =>
 {
     //console.log(req.body);
     //res.json(req.body);
