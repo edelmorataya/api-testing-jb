@@ -3,6 +3,8 @@ const express= require('express');
 
 const  app = express ();
 
+app.use(express.json());
+
 const posts = require('./posts')
 
 app.get('/posts', (req, res) =>
@@ -26,14 +28,17 @@ app.post('/post', (req, res) =>
     //res.json(req.body);
     //res.append(req.body.post)
 
-    /*const info = {
+    const info = {
 
         id: infos.lenth +1,
         name : req.body.post
     };
 
-    infos.push(info);*/
-    res.send(req.body);
+    infos.push(info);
+    res.send(info);
+
+   // req.json(req.body);
+   // res.send(req.body);
     
 }
 );
