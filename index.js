@@ -26,14 +26,14 @@ app.post('/post', (req, res) =>
     //res.json(req.body);
     //res.append(req.body.post)
 
-    const info = {
+    /*const info = {
 
         id: infos.lenth +1,
         name : req.body.post
     };
 
-    infos.push(info);
-    res.send(info);
+    infos.push(info);*/
+    res.send(req.body);
     
 }
 );
