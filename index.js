@@ -37,11 +37,8 @@ app.post('/api/infos', (req, res) =>
     //res.json(req.body);
     //res.append(req.body.post)
 
-    const info = {
-
-        id: infos.lenth + 1,
-        name : req.body.name
-    };
+    const info =  req.body
+   
 
     infos.push(info);
     res.send(info);
