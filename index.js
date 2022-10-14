@@ -2,6 +2,7 @@
 const express= require('express');
 
 const  app = express ();
+const checkAuth = require('./checkAuth');
 
 app.use(express.json());
 
@@ -74,7 +75,7 @@ app.get('/api/execute', (req, res) =>
     res.send(excs)
 });
 
-app.post('/api/execute', (req, res) =>
+app.post('/api/execute', checkAuth, (req, res) =>
 {
     const exc =  req.body
     excs.push(exc);
