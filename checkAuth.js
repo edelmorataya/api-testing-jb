@@ -5,7 +5,7 @@ const token = "estetokenestunaprueba1234";
 module.exports = (req, res, next
 
 ) => {
-    try{
+    /*try{
     //const decoded =jwt.verify(req.body.token, token );
     
         next();
@@ -14,6 +14,6 @@ module.exports = (req, res, next
     return res.status(401).json({
         message: 'Auth failed'
     });
-}
+}*/
 
 }

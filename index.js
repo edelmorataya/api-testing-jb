@@ -2,7 +2,6 @@
 const express= require('express');
 
 const  app = express ();
-const checkA = require('/checkAuth');
 
 app.use(express.json());
 
@@ -14,7 +13,7 @@ const infos = [
 
 const posts = require('./posts')
 
-app.get('/posts', checkA, (req, res) =>
+app.get('/posts', (req, res) =>
 {
     res.json(posts)
 
