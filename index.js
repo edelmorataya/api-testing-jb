@@ -49,11 +49,25 @@ app.post('/api/infos', (req, res) =>
 }
 );
 
+const api = [];
 const excs = [];
 const saves = [];
 const publishes = [];
 const validates = [];
 const stops = [];
+
+app.get('/api/', (req, res) =>
+{
+    res.send(api)
+});
+
+app.post('/api/', (req, res) =>
+{
+    const ap =  req.body
+    api.push(ap);
+    res.send(ap);
+}
+);
 
 app.get('/api/execute', (req, res) =>
 {
@@ -120,7 +134,7 @@ app.get('/api/stop', (req, res) =>
 app.post('/api/stop', (req, res) =>
 {
     const sto =  req.body
-    stops.push(sto);
+    stoheps.push(sto);
     res.send(sto);
 }
 );
