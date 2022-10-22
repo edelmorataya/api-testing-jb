@@ -74,13 +74,13 @@ app.get('/api/execute', (req, res) =>
     res.send(excs)
 });
 
-app.post('/api/execute', (req, res) =>
+/*app.post('/api/execute', (req, res) =>
 {
     const exc =  req.body
     excs.push(exc);
     res.send(exc);
 }
-);
+);*/
 
 app.post('https://eocgejvahrstc0y.m.pipedream.net', (req, res) =>
 {
