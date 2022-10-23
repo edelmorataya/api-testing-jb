@@ -2,6 +2,7 @@
 const express= require('express');
 
 const  app = express ();
+const request = require('request');
 
 app.use(express.json());
 
@@ -82,28 +83,13 @@ app.post('/api/execute', (req, res) =>
 }
 );
 
-app.post('https://eocgejvahrstc0y.m.pipedream.net', (req, res) =>
-{
-    const exc =  req.body
-    excs.push(exc);
-    res.send(exc);
-}
-);
-
-app.get('/api/save', (req, res) =>
-{
-    res.send(saves)
-});
 
 
-app.post('/api/save', (req, res) =>
-{
-    const sav =  req.body
-    saves.push(sav);
-    res.send(sav);
-}
-);
-
+request('https://eocgejvahrstc0y.m.pipedream.net/execute', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Print the google web page.
+  }
+})
 
 app.get('/api/publish', (req, res) =>
 {
@@ -118,37 +104,6 @@ app.post('/api/publish', (req, res) =>
     res.send(publi);
 }
 );
-
-app.get('/api/validate', (req, res) =>
-{
-    res.send(validates)
-});
-
-
-app.post('/api/validate', (req, res) =>
-{
-    const vali =  req.body
-    validates.push(vali);
-    res.send(vali);
-}
-);
-
-app.get('/api/stop', (req, res) =>
-{
-    res.send(stops)
-});
-
-
-app.post('/api/stop', (req, res) =>
-{
-    const sto =  req.body
-    stoheps.push(sto);
-    res.send(sto);
-}
-);
-
-
-
 
 
 app.listen(process.env.PORT || 3000, 
