@@ -80,6 +80,14 @@ app.post('/api/execute', (req, res) =>
     const exc =  req.body
     excs.push(exc);
     res.send(exc);
+
+    request.post({
+        headers: {'content-type' : 'application/json'},
+        url:     'https://eocgejvahrstc0y.m.pipedream.net/execute',
+        body:    req.body
+      }, function(error, response, body){
+        console.log(body);
+      });
 }
 );
 
@@ -92,13 +100,7 @@ app.post('/api/execute', (req, res) =>
 })
 */
 
-request.post({
-  headers: {'content-type' : 'application/json'},
-  url:     'https://eocgejvahrstc0y.m.pipedream.net/execute',
-  body:    "mes=heydude"
-}, function(error, response, body){
-  console.log(body);
-});
+
 
 
 
