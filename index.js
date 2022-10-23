@@ -85,14 +85,21 @@ app.post('/api/execute', (req, res) =>
 
 
 
-request('https://eocgejvahrstc0y.m.pipedream.net/execute', function (error, response, body) {
+/*request.post('https://eocgejvahrstc0y.m.pipedream.net/execute', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Print the google web page.
   }
 })
+*/
 
+request.post({
+  headers: {'content-type' : 'application/json'},
+  url:     'https://eocgejvahrstc0y.m.pipedream.net/execute',
+  body:    "mes=heydude"
+}, function(error, response, body){
+  console.log(body);
+});
 
-request.post('https://eocgejvahrstc0y.m.pipedream.net/execute').form({key:'value'})
 
 
 
