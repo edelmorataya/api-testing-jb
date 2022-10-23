@@ -92,30 +92,8 @@ request('https://eocgejvahrstc0y.m.pipedream.net/execute', function (error, resp
 })
 
 
-var http = require('http');
+request.post('https://eocgejvahrstc0y.m.pipedream.net/execute').form({key:'value'})
 
-var options = {
-  host: 'https://eocgejvahrstc0y.m.pipedream.net',
-  path: '/execute',
-  port: '80',
-  method: 'POST'
-};
-
-callback = function(response) {
-  var str = ''
-  response.on('data', function (chunk) {
-    str += chunk;
-  });
-
-  response.on('end', function () {
-    console.log(str);
-  });
-}
-
-var req = http.request(options, callback);
-//This is the data we are posting, it needs to be a string or a buffer
-req.write("data");
-req.end();
 
 
 
