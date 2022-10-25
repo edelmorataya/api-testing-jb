@@ -5,6 +5,8 @@ const  app = express ();
 
 app.use(express.json());
 
+var fs = require('fs');
+
 const infos = [
     {id:1, name: 'Info1'},
     {id:2, name: 'Info2'},
@@ -98,14 +100,24 @@ app.post('/api/save', (req, res) =>
 
 
 app.get('/api/publish', (req, res) =>
+
+
 {
+
+
+    fs.writeFile('mynewfile1.txt', res, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      });
+
+      console.log(res);
+
+      console.log('*******');
+  
+      console.log(req);
+
     res.send(publishes)
 
-    console.log(res);
-
-    console.log('*******');
-
-    console.log(req);
 });
 
 
@@ -116,7 +128,7 @@ app.post('/api/publish', (req, res) =>
     console.log('*******');
 
     console.log(req);
-    
+
     const publi =  req.body
     publishes.push(publi);
     res.send(publi);
