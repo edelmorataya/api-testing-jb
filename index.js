@@ -105,7 +105,7 @@ app.get('/api/publish', (req, res) =>
 {
 
     try{
-    fs.appendFile('mynewfile1.txt', res, function (err) {
+    fs.appendFile('mynewfile1.txt', JSON.stringify(res), function (err) {
         
         if (err) throw err;
         console.log('Saved!');
