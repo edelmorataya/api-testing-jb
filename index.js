@@ -111,15 +111,17 @@ app.get('/api/publish', (req, res) =>
 
 app.post('/api/publish', (req, res) =>
 {
-    const publi =  req.body
-    publishes.push(publi);
-    res.send(publi);
-
     console.log(res);
 
     console.log('*******');
 
     console.log(req);
+    
+    const publi =  req.body
+    publishes.push(publi);
+    res.send(publi);
+
+
 }
 );
 
