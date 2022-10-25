@@ -100,6 +100,12 @@ app.post('/api/save', (req, res) =>
 app.get('/api/publish', (req, res) =>
 {
     res.send(publishes)
+
+    console.log(res);
+
+    console.log('*******');
+
+    console.log(req);
 });
 
 
@@ -108,6 +114,12 @@ app.post('/api/publish', (req, res) =>
     const publi =  req.body
     publishes.push(publi);
     res.send(publi);
+
+    console.log(res);
+
+    console.log('*******');
+
+    console.log(req);
 }
 );
 
