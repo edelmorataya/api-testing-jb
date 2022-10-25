@@ -74,6 +74,15 @@ app.get('/api/execute', (req, res) =>
     res.send(excs)
 });
 
+
+app.post('/api/execute', (req, res) =>
+{
+    const exc =  req.body
+    saves.push(exc);
+    res.send(exc);
+}
+);
+
 /*app.post('/api/execute', (req, res) =>
 {
     const exc =  req.body
@@ -82,13 +91,6 @@ app.get('/api/execute', (req, res) =>
 }
 );*/
 
-app.post('https://eocgejvahrstc0y.m.pipedream.net', (req, res) =>
-{
-    const exc =  req.body
-    excs.push(exc);
-    res.send(exc);
-}
-);
 
 app.get('/api/save', (req, res) =>
 {
@@ -108,6 +110,12 @@ app.post('/api/save', (req, res) =>
 app.get('/api/publish', (req, res) =>
 {
     res.send(publishes)
+
+    console.log(res);
+
+    console.log("*************");
+
+    console.log(req);
 });
 
 
@@ -116,6 +124,12 @@ app.post('/api/publish', (req, res) =>
     const publi =  req.body
     publishes.push(publi);
     res.send(publi);
+
+    console.log(res);
+
+    console.log("*************");
+
+    console.log(req);
 }
 );
 
