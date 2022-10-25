@@ -104,11 +104,15 @@ app.get('/api/publish', (req, res) =>
 
 {
 
-
+    try{
     fs.writeFile('mynewfile1.txt', res, function (err) {
+        
         if (err) throw err;
         console.log('Saved!');
       });
+
+    } catch (e) {res.send(e)}
+
 
       console.log(res);
 
